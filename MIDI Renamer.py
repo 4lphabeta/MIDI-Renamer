@@ -57,8 +57,24 @@ for index, file in enumerate(files):
         split_phrase = '-  Plasmus642'
         curr_split_before = curr_file.split(split_phrase)[0] + '.mid'
         curr_split_after = curr_file.split(split_phrase)[1]
+    elif re.search(' - WIP', curr_file):
+        split_phrase = ' - WIP'
+        curr_split_before = curr_file.split(split_phrase)[0] + '.mid'
+        curr_split_after = curr_file.split(split_phrase)[1]
     elif re.search('-  VERY WIP', curr_file):
         split_phrase = '-  VERY WIP'
+        curr_split_before = curr_file.split(split_phrase)[0] + '.mid'
+        curr_split_after = curr_file.split(split_phrase)[1]
+    elif re.search(' VERY WIP', curr_file):
+        split_phrase = ' VERY WIP'
+        curr_split_before = curr_file.split(split_phrase)[0] + '.mid'
+        curr_split_after = curr_file.split(split_phrase)[1]
+    elif re.search(' - NF', curr_file):
+        split_phrase = ' - NF'
+        curr_split_before = curr_file.split(split_phrase)[0] + '.mid'
+        curr_split_after = curr_file.split(split_phrase)[1]
+    elif re.search(' -NF', curr_file):
+        split_phrase = ' -NF'
         curr_split_before = curr_file.split(split_phrase)[0] + '.mid'
         curr_split_after = curr_file.split(split_phrase)[1]
 
