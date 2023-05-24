@@ -1,6 +1,6 @@
 import os, re
 
-path = 'D:/Music/Midi Samples/Midis/'
+path = 'D:/Music/Midi Samples/Midis/'   # The path to your MIDI folder
 files = os.listdir(path)
 
 delete_count = 0
@@ -8,9 +8,9 @@ rename_count = 0
 
 for index, file in enumerate(files):
     rename = False
-    curr_file = str(file)
+    curr_file = str(file)   # The current file being checked
     try:
-        next_file = str(files[index + 1])
+        next_file = str(files[index + 1])   # The file after the one being checked currently
     except IndexError:
         pass
     curr_split_before = ''
@@ -21,7 +21,6 @@ for index, file in enumerate(files):
         global curr_split_before, curr_split_after
         curr_split_before = curr_file.split(phrase)[0] + '.mid'
         curr_split_after = curr_file.split(phrase)[1]
-
 
     if re.search(split_phrase := ' - Edit', curr_file):
         func_splits(split_phrase)
